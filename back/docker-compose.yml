@@ -1,0 +1,16 @@
+version: '3.0'
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: always
+    volumes:
+      - pg:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=pgpwd
+      - POSTGRES_USER=pguser
+      - POSTGRES_DB=pgdb
+
+volumes:
+  pg:
